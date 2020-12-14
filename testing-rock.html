@@ -7,13 +7,19 @@
 <script>
 
     let options = ["Paper", "Rock", "Scissors"];
+
+    // variables to keep track of the current score
     let currentComputerSCore = 0;
     let currentPlayerScore = 0;
 
+
+    // Function to choose random option of "Rock, paper scisorrs"
     function computerPlay () {
         const randomIndex = Math.floor(Math.random() * options.length);
         return options[randomIndex];
     }
+
+    // Function to compare the 2 options, and declare the winner of each round
         
             function playRound (playerSelection, computerSelection) {
 
@@ -66,6 +72,7 @@
             }
         
 
+            // function to run the playROund function 5 times.
         function game () {
             for (let i = 0; i < 5; i++) {
                 console.log(playRound(playerSelection,computerPlay ()));
@@ -74,6 +81,7 @@
             }
         }
 
+        // testing my work
         debugger;
         const playerSelection = "rock";
         const computerSelection = computerPlay();
