@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+
+<body>
+<script>
+
+    let options = ["Paper", "Rock", "Scissors"];
+    let currentComputerSCore = 0;
+    let currentPlayerScore = 0;
+
+    function computerPlay () {
+        const randomIndex = Math.floor(Math.random() * options.length);
+        return options[randomIndex];
+    }
+        
+            function playRound (playerSelection, computerSelection) {
+
+                playerSelection = playerSelection.toLowerCase();
+                computerSelection = computerSelection.toLowerCase()
+
+                if (playerSelection === "rock" && computerSelection === "rock") {
+                    return `its a tie! player chose ${playerSelection} , computer chose ${computerSelection}  Which means a tie`
+
+                } else if (playerSelection === "rock" && computerSelection === "paper") {
+                    currentComputerSCore = currentComputerSCore + 1
+                    return `Player lose, plyaer chose ${playerSelection} while computer chose ${computerSelection}, and paper beats rock`
+                    
+                    
+                    
+
+                } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                    currentPlayerScore = currentPlayerScore + 1;
+                    return `Player win, plyaer chose ${playerSelection} while computer chose ${computerSelection}, and rock beats Scissors`
+            
+                
+
+                } else if (playerSelection === "paper" && computerSelection === "rock") {
+                    currentPlayerScore = currentPlayerScore + 1;
+                    return `player wins, Paper beats Rock`;
+
+
+                } else if (playerSelection === "paper" && computerSelection === "paper") {
+                    return `its a tie, you both selected paper`;
+
+                } else if (playerSelection === "paper" && computerSelection === "scissors") {
+                    currentComputerSCore = currentComputerSCore + 1;
+                    return `computer wins, computer pick scisorss and player picked paper` 
+
+                    
+
+                } else if (playerSelection === "scissors" && computerSelection === "scissors") {
+                    return `Its a tie, both picked Scisorss`
+
+                } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                    currentPlayerScore = currentPlayerScore + 1;
+                    return `Player wins, Player chose Scissors while player chose Paper`
+                    
+
+                } else { // if (playerSelection === "scissors" && computerSelection === "rock")//   
+                    currentComputerSCore = currentComputerSCore + 1;
+                    return `Computer wins, player chose Scissors while Computer chose Rock`
+                    
+                }
+            }
+        
+
+        function game () {
+            for (let i = 0; i < 5; i++) {
+                console.log(playRound(playerSelection,computerPlay ()));
+                console.log(currentComputerSCore);
+                console.log(currentPlayerScore)
+            }
+        }
+
+        debugger;
+        const playerSelection = "rock";
+        const computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
+        game();
+
+</script>
+</body>
